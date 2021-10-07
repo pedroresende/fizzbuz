@@ -10,10 +10,13 @@ const isNumberDivisibleByFive = (/** @type number */ number) =>
 const isNumberDivisibleByThree = (/** @type number */ number) =>
   isNumberDivisibleBy(number)(3);
 
+const isNumberDivisibleByThreeAnFive = (/** @type number */ number) =>
+  isNumberDivisibleByFive(number) && isNumberDivisibleByThree(number);
+
 const fizzBuzz = (/** @type number */ number) => {
   const output = [];
   for (let i = 1; i <= number; i++) {
-    if (isNumberDivisibleByThree(i) && isNumberDivisibleByFive(i)) {
+    if (isNumberDivisibleByThreeAnFive(i)) {
       output.push("FizzBuzz");
       continue;
     }
